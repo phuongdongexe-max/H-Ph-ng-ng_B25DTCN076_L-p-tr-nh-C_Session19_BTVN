@@ -1,0 +1,23 @@
+#include <stdio.h>
+int findMax(int *arr, int n){
+    int max = *arr;
+    for(int i=1; i<n; i++){
+        if(*(arr+i) > max){
+            max = *(arr+i);
+        }
+    }
+    return max;
+}
+
+int main(){
+    int n;
+    printf("Nhap so phan tu n: ");
+    scanf("%d", &n);
+    int arr[n];
+    for(int i=0; i<n; i++){
+        printf("Nhap phan tu thu %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    printf("Phan tu lon nhat la: %d", findMax(arr, n));
+    return 0;
+}
